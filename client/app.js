@@ -250,13 +250,10 @@ async function sendMessage() {
 // POLLING (auto-refresh)
 // ─────────────────────────────────────────
 
-// Starts polling: reloads messages every 2 seconds and refreshes the user list every 5 seconds
+// Starts polling: reloads messages every 2 seconds
 function startPolling() {
   clearInterval(pollingInterval); // Clear any existing interval first
   pollingInterval = setInterval(loadMessages, 2000);
-
-  // Also refresh the user list every 5 seconds so new users appear automatically
-  setInterval(loadUsers, 5000);
 }
 
 // ─────────────────────────────────────────
