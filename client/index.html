@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ChatApp</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── LOGIN SCREEN ── -->
+  <div id="login-screen" class="screen">
+    <div class="auth-box">
+      <h1>💬 ChatApp</h1>
+      <input type="text" id="login-username" placeholder="Username" />
+      <input type="password" id="login-password" placeholder="Password" />
+      <button onclick="login()">Log in</button>
+      <p>Don't have an account? <span class="link" onclick="showScreen('register-screen')">Sign up</span></p>
+    </div>
+  </div>
+
+  <!-- ── REGISTER SCREEN ── -->
+  <div id="register-screen" class="screen hidden">
+    <div class="auth-box">
+      <h1>💬 Create account</h1>
+      <input type="text" id="register-username" placeholder="Username" />
+      <input type="email" id="register-email" placeholder="Email" />
+      <input type="password" id="register-password" placeholder="Password" />
+      <button onclick="register()">Sign up</button>
+      <p>Already have an account? <span class="link" onclick="showScreen('login-screen')">Log in</span></p>
+    </div>
+  </div>
+
+  <!-- ── MAIN CHAT SCREEN ── -->
+  <div id="chat-screen" class="screen hidden">
+
+    <!-- Sidebar: user list -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <span id="current-username">👤</span>
+        <button class="logout-btn" onclick="logout()">Log out</button>
+      </div>
+
+      <h3>Users</h3>
+      <!-- List of users to chat with -->
+      <ul id="users-list"></ul>
+    </div>
+
+    <!-- Chat panel -->
+    <div class="chat-panel">
+
+      <!-- Header showing the other user's name -->
+      <div class="chat-header" id="chat-header">
+        Select a user to start chatting
+      </div>
+
+      <!-- Area where messages are displayed -->
+      <div class="messages-area" id="messages-area">
+        <p class="placeholder">👈 Choose a user from the list</p>
+      </div>
+
+      <!-- Input area to write and send messages -->
+      <div class="message-input-area">
+        <input
+          type="text"
+          id="message-input"
+          placeholder="Type a message..."
+          onkeydown="if(event.key === 'Enter') sendMessage()"
+          disabled
+        />
+        <button id="send-btn" onclick="sendMessage()" disabled>Send</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
