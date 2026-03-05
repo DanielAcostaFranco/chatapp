@@ -1,51 +1,50 @@
-💬 ChatApp
+# ChatApp
 
-A simple real-time web chat application where users can register, log in, and send private messages to each other directly from the browser.
+ChatApp is a simple browser-based messaging application where users can create an account, log in, and send private messages to other users in real time. The project uses a Node.js and Express backend with a PostgreSQL database and a frontend built with HTML, CSS, and JavaScript.
 
-🚀 Features
+## Instructions for Build and Use
 
-👤 User Accounts — Register and log in with username, email, and password.
+Steps to build and/or run the software:
 
-👥 User List — See all registered users in a sidebar that updates automatically.
+1. Install Node.js and PostgreSQL.
+2. Clone the project repository and navigate to the project folder.
+3. Install dependencies using `npm install`.
+4. Create a `.env` file with your database credentials.
+5. Start the server using `node server.js`.
+6. Open `http://localhost:3000` in your browser.
 
-💬 Private Conversations — Start 1-on-1 chats with any user.
+Instructions for using the software:
 
-📨 Messaging — Send and receive messages stored in the database.
+1. Register a new account with a username, email, and password.
+2. Log in to access the chat interface.
+3. Select a user from the sidebar to open a conversation.
+4. Type a message and press send to start chatting.
 
-🔄 Auto Refresh — Messages update automatically every 2 seconds.
+## Development Environment
 
-🧰 Tech Stack
-Layer	Technology
-Frontend	HTML, CSS, JavaScript
-Backend	Node.js, Express
-Database	PostgreSQL
-⚙️ Setup
+To recreate the development environment, you need the following software and/or libraries:
 
-Install dependencies
+* Node.js
+* Express.js
+* PostgreSQL
+* HTML, CSS, JavaScript
+* dotenv
 
-npm install
+## Useful Websites to Learn More
 
-Create a .env file
+I found these websites useful in developing this software:
 
-DB_HOST=localhost
-DB_USER=postgres
-DB_PASSWORD=yourpassword
-DB_NAME=chatapp
-SESSION_SECRET=secret
+* https://nodejs.org/en/docs
+* https://expressjs.com/
+* https://www.postgresql.org/docs/
+* https://developer.mozilla.org/
 
-Run the server
+## Future Work
 
-node server.js
+The following items I plan to fix, improve, and/or add to this project in the future:
 
-Open in browser
-
-http://localhost:3000
-🧠 Architecture
-
-REST API connects frontend and backend (/api/users, /api/messages)
-
-Polling every 2 seconds checks for new messages
-
-Express serves both API and frontend
-
-PostgreSQL stores users, conversations, and messages
+* [ ] Add WebSocket support for real-time messaging
+* [ ] Add group chats
+* [ ] Improve the user interface
+* [ ] Add online/offline user status
+* [ ] Allow sending images or files
